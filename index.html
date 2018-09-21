@@ -1,0 +1,162 @@
+<!--Drum Machine App-->
+
+<!--
+jQuery:
+- Handles button clicks for each instrumental
+- Changes Sounds according to set switch
+- Disables all switches and buttons when power switch is off
+- Applies master volume to all audio elements
+
+Bugs:
+- Keypress won't activate CSS button:active change.
+Button does not shift and change colors
+
+Challenges:
+Re-style the app with Bootstrap
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Drum Machine</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    >
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--jQuery CDN-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+
+    <!--JavaScript-->
+    <script src="script.js"></script>
+
+  </head>
+  <body>
+
+  <div id="main">
+
+    <div id="title-container">
+      <h1 id="title">Drum Machine</h1>
+      <h2 id="author">coded and designed by <span style="color: rgb(126, 0, 0);">James Pham</span></h2>
+    </div>
+
+    <div id="drum-machine" class="">
+
+      <!--Accessories, Toggles, and Display Container-->
+
+      <div class="accessories-container">
+
+
+          <h4>Power</h4>
+          <label class="switch">
+            <input type="checkbox" id="powerToggle" onclick="play()">
+            <span class="slider"></span>
+          </label>
+
+
+        <div id="display">
+
+        </div>
+
+        <div id="volume-container">
+          <input id='volume' type="range" value="50">
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" id="setToggle">
+          <span class="slider"></span>
+        </label>
+        <h4>Set</h4>
+
+      </div>
+
+      <!--Drum Keys/Buttons/Instrumentals-->
+
+      <div class='button-container'>
+
+        <div class="button-row">
+
+          <button class='drum-pad' id="sound-1">
+            Q
+            <audio src="snare.wav" class="clip" id="Q"></audio>
+          </button>
+
+          <button class='drum-pad' id="sound-2">
+            W
+            <audio src="tom1.wav" class="clip" id="W"></audio>
+          </button>
+
+          <button class='drum-pad' id="sound-3">
+            E
+            <audio src="tom2.wav" class="clip" id="E"></audio>
+          </button>
+
+        </div>
+
+        <div class="button-row">
+
+          <button class='drum-pad' id="sound-4">
+            A
+            <audio src="tom3.wav" class="clip" id="A"></audio>
+          </button>
+
+          <button class='drum-pad' id="sound-5">
+            S
+            <audio src="ride.wav" class="clip" id="S"></audio>
+          </button>
+
+          <button class='drum-pad' id="sound-6">
+            D
+            <audio src="bell.wav" class="clip" id="D"></audio>
+          </button>
+
+        </div>
+
+        <div class="button-row">
+
+          <button class='drum-pad' id="sound-7">
+            Z
+            <audio src="kick.wav" class="clip" id="Z"></audio>
+          </button>
+
+          <button class='drum-pad' id="sound-8">
+            X
+            <audio src="hi-hat1.wav" class="clip" id="X">
+
+            </audio>
+          </button>
+
+          <button class='drum-pad' id="sound-9">
+            C
+            <audio src="hi-hat2.wav" class="clip" id="C">
+
+            </audio>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  </body>
+</html>
