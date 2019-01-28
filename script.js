@@ -5,20 +5,20 @@
 //Second value is original sound (for switching back)
 //Nested within the deepest level, is the audio file name and display name for the sound effect
 var altSounds = {
-  'Q' : [['chord1.wav','Chord 1'], ['snare.wav', 'Snare']],
-  'W' : [['chord2.wav', 'Chord 2'], ['tom1.wav', 'Tom 1']],
-  'E' : [['a6.mp3', 'Piano A6'], ['tom2.wav', ' Tom 2']],
-  'A' : [['b6.mp3', 'Piano B6'], ['tom3.wav', 'Tom 3']],
-  'S' : [['c6.wav', 'Piano C6'] , ['ride.wav', 'Ride Cymbal']],
-  'D' : [['d6.wav', 'Piano D6'], ['bell.wav', 'Crash Bell']],
+  'Q' : [['http://freesound.org/data/previews/128/128794_2301351-lq.mp3','Chord 1'], ['http://freesound.org/data/previews/13/13750_32468-lq.mp3', 'Snare']],
+  'W' : [['http://freesound.org/data/previews/4/4197_7740-lq.mp3', 'Chord 2'], ['http://freesound.org/data/previews/209/209875_3797507-lq.mp3', 'Tom 1']],
+  'E' : [['http://freesound.org/data/previews/176/176482_3172867-lq.mp3', 'Piano A6'], ['http://freesound.org/data/previews/102/102797_480691-lq.mp3', ' Tom 2']],
+  'A' : [['http://freesound.org/data/previews/176/176446_3172867-lq.mp3', 'Piano B6'], ['http://freesound.org/data/previews/244/244115_736471-lq.mp3', 'Tom 3']],
+  'S' : [['http://freesound.org/data/previews/176/176443_3172867-lq.mp3', 'Piano C6'] , ['http://freesound.org/data/previews/13/13250_36719-lq.mp3', 'Ride Cymbal']],
+  'D' : [['http://freesound.org/data/previews/176/176518_3172867-lq.mp3', 'Piano D6'], ['http://freesound.org/data/previews/70/70057_321967-lq.mp3', 'Crash Bell']],
   // can't add anymore properties or it won't work for some reason
 };
 
 //Couldn't intialize the rest of key-value pairs in original object.
 //Work Around...
-altSounds['Z'] = [['e6.wav', 'Piano E6'], ['kick.wav', 'Bass Kick']];
-altSounds['X'] = [['f6.mp3', 'Piano F6'], ['hi-hat1.wav', 'Hi-Hat 1']];
-altSounds['C'] = [['g6.mp3', 'Piano G6'], ['hi-hat2.wav', 'Hi-Hat 2']];
+altSounds['Z'] = [['http://freesound.org/data/previews/176/176524_3172867-lq.mp3', 'Piano E6'], ['http://freesound.org/data/previews/385/385944_1743037-lq.mp3', 'Bass Kick']];
+altSounds['X'] = [['http://freesound.org/data/previews/176/176499_3172867-lq.mp3', 'Piano F6'], ['http://freesound.org/data/previews/0/802_797-lq.mp3', 'Hi-Hat 1']];
+altSounds['C'] = [['http://freesound.org/data/previews/176/176468_3172867-lq.mp3', 'Piano G6'], ['http://freesound.org/data/previews/103/103611_1755605-lq.mp3', 'Hi-Hat 2']];
 
 
 /////// jQuery ///////
@@ -59,52 +59,52 @@ $('document').ready( function() {
   });
 
   //Handles key presses and clicks the associated button
-  $('html').keypress(function (e) {
+  $('html').keypress(function (e, f) {
 
     //Code to match keypress and button click
-    let unicode = e.which;
-
+    const unicode = e.which;   // minus 32 to get to capitalized characters 
 
     //Work around for powerToggle. The above original toggle
     //does not disable keypress
+    console.log(unicode)
 
     if(document.getElementById('powerToggle').checked) {
 
       switch (unicode) {
 
-        case 113:
+        case 81:
           $('#sound-1').click();
           break;
 
-        case 119:
+        case 87:
           $('#sound-2').click();
           break;
 
-        case 101:
+        case 69:
           $('#sound-3').click();
           break;
 
-        case 97:
+        case 65:
           $('#sound-4').click();
           break;
 
-        case 115:
+        case 83:
           $('#sound-5').click();
           break;
 
-        case 100:
+        case 68:
           $('#sound-6').click();
           break;
 
-        case 122:
+        case 90:
           $('#sound-7').click();
           break;
 
-        case 120:
+        case 88:
           $('#sound-8').click();
           break;
 
-        case 99:
+        case 67:
           $('#sound-9').click();
           break;
 
